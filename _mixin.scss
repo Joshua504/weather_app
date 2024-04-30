@@ -1,0 +1,11 @@
+@mixin sm-mq($arg) {
+  @media (width <= $arg){
+    @content;
+  }
+}
+
+@mixin md-mq(){
+  @media (767px <= width <= 1023px){
+    @content;
+  }
+}

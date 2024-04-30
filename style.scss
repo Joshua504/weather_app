@@ -1,0 +1,130 @@
+@import "reset";
+@import "variables";
+@import "mixin";
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	margin: 1em;
+
+	@include sm-mq(767px) {
+		margin: 0.5em;
+	}
+
+	.md-txt {
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 14px;
+		color: $txt;
+	}
+
+	.container {
+		background: $cloudy;
+		padding: 1em;
+		border-radius: 15px;
+		box-shadow: -18px -18px 36px #949aa9, 18px 18px 36px #c8d0e5;
+		transition: .5s ease;
+
+		@include sm-mq(767px) {
+			width: 100%;
+		}
+
+		@include md-mq() {
+		}
+
+		.container__item1 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 10px;
+		}
+
+		.container__inpt {
+			width: 250px;
+			padding: 13px 10px;
+			border-top-left-radius: 50px;
+			border-bottom-left-radius: 50px;
+		}
+
+		.container__btn {
+			padding: 13px 8px;
+			width: 100px;
+			border-top-right-radius: 50px;
+			border-bottom-right-radius: 50px;
+			cursor: pointer;
+			background: $rainy;
+			color: white;
+			text-transform: capitalize;
+			transition: 0.5s linear;
+
+			&:hover {
+				background: #4b6faf;
+			}
+		}
+
+		.container__md-txt {
+			@extend .md-txt;
+			margin-bottom: 1.5em;
+		}
+
+		.container__item2 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			visibility: collapse;
+
+			.weather__degree {
+				font-size: 3rem;
+				font-weight: 200;
+				color: $txt;
+				display: flex;
+			}
+
+			.description {
+				padding: 1em 0;
+			}
+
+			.imgcon {
+
+				.lg__img {
+					width: 230px;
+				}
+			}
+		}
+
+		.container__item3 {
+			display: none;
+
+			.txt-hd {
+				@extend .md-txt;
+				margin-bottom: 1em;
+			}
+
+			.weather__fc {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.weather__days {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				cursor: pointer;
+				padding: 2px;
+				border-radius: 5px;
+				transition: 0.5s linear;
+
+				&:hover {
+					background: white;
+				}
+			}
+
+			.deg {
+				font-size: 11px;
+			}
+		}
+	}
+}
